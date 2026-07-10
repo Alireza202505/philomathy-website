@@ -1,0 +1,60 @@
+{
+  "name": "Service",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Tutoring",
+        "Exam Prep",
+        "Courses",
+        "Camps",
+        "Workshops",
+        "Registration",
+        "Membership",
+        "Custom"
+      ]
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "online",
+        "in-person",
+        "both"
+      ],
+      "default": "both"
+    },
+    "price": {
+      "type": "number"
+    },
+    "durationMinutes": {
+      "type": "number",
+      "default": 60
+    },
+    "description": {
+      "type": "string"
+    },
+    "instructor": {
+      "type": "string"
+    },
+    "schedule": {
+      "type": "string"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true
+    },
+    "sortOrder": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "name",
+    "category",
+    "price"
+  ]
+}

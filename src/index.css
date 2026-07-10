@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800&family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&family=Source+Code+Pro:wght@400;500;600&family=Libre+Baskerville:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 30% 97%;
+    --foreground: 211 50% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 211 50% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 211 50% 12%;
+    --primary: 211 72% 10%;
+    --primary-foreground: 48 20% 97%;
+    --secondary: 184 79% 19%;
+    --secondary-foreground: 48 20% 97%;
+    --muted: 40 20% 93%;
+    --muted-foreground: 211 20% 40%;
+    --accent: 43 72% 52%;
+    --accent-foreground: 211 72% 10%;
+    --destructive: 0 84.2% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 211 20% 86%;
+    --input: 211 20% 86%;
+    --ring: 43 72% 52%;
+    --chart-1: 211 72% 10%;
+    --chart-2: 184 79% 19%;
+    --chart-3: 43 72% 52%;
+    --chart-4: 48 20% 70%;
+    --chart-5: 0 0% 13%;
+    --radius: 0.5rem;
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-mono: 'Source Code Pro', ui-monospace, monospace;
+    --sidebar-background: 211 72% 10%;
+    --sidebar-foreground: 48 20% 97%;
+    --sidebar-primary: 43 72% 52%;
+    --sidebar-primary-foreground: 211 72% 10%;
+    --sidebar-accent: 211 60% 15%;
+    --sidebar-accent-foreground: 48 20% 97%;
+    --sidebar-border: 211 50% 18%;
+    --sidebar-ring: 43 72% 52%;
+  }
+
+  .dark {
+    --background: 211 72% 6%;
+    --foreground: 48 20% 97%;
+    --card: 211 60% 10%;
+    --card-foreground: 48 20% 97%;
+    --popover: 211 60% 10%;
+    --popover-foreground: 48 20% 97%;
+    --primary: 48 20% 97%;
+    --primary-foreground: 211 72% 10%;
+    --secondary: 184 79% 19%;
+    --secondary-foreground: 48 20% 97%;
+    --muted: 211 40% 15%;
+    --muted-foreground: 48 10% 65%;
+    --accent: 43 72% 52%;
+    --accent-foreground: 211 72% 10%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 211 40% 18%;
+    --input: 211 40% 18%;
+    --ring: 43 72% 52%;
+    --chart-1: 43 72% 52%;
+    --chart-2: 184 79% 40%;
+    --chart-3: 48 20% 70%;
+    --chart-4: 211 40% 50%;
+    --chart-5: 0 0% 80%;
+    --sidebar-background: 211 72% 6%;
+    --sidebar-foreground: 48 20% 97%;
+    --sidebar-primary: 43 72% 52%;
+    --sidebar-primary-foreground: 211 72% 10%;
+    --sidebar-accent: 211 50% 12%;
+    --sidebar-accent-foreground: 48 20% 97%;
+    --sidebar-border: 211 40% 15%;
+    --sidebar-ring: 43 72% 52%;
+  }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  /* ── Global typography foundation ── */
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    font-size: 1rem;
+    line-height: 1.7;
+    letter-spacing: -0.005em;
+  }
+
+  /* ── Heading scale — Playfair Display ── */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    color: inherit;
+  }
+
+  h1 { font-size: clamp(2.25rem, 5vw, 4rem); }
+  h2 { font-size: clamp(1.75rem, 3.5vw, 2.75rem); }
+  h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
+  h4 { font-size: clamp(1.1rem, 1.8vw, 1.3rem); font-weight: 600; }
+  h5 { font-size: 1rem; font-weight: 600; letter-spacing: -0.01em; }
+  h6 { font-size: 0.875rem; font-weight: 600; letter-spacing: 0; }
+
+  /* ── Body copy — Inter ── */
+  p {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.75;
+    letter-spacing: -0.003em;
+  }
+
+  /* ── Lead paragraph ── */
+  p.lead {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    font-weight: 400;
+    color: hsl(var(--muted-foreground));
+  }
+
+  /* ── Small utility ── */
+  small, .text-xs, .text-sm {
+    letter-spacing: 0;
+  }
+
+  /* ── Blockquote — elegant academic style ── */
+  blockquote {
+    font-family: var(--font-heading);
+    font-style: italic;
+    line-height: 1.5;
+    letter-spacing: -0.015em;
+  }
+
+  /* ── Code / mono ── */
+  code, pre, kbd {
+    font-family: var(--font-mono);
+    font-feature-settings: "kern" 0;
+  }
+
+  /* ── Uppercase labels — tighten tracking ── */
+  .label-overline {
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+  }
+}
+
+/* ── Focus ring for keyboard navigation ── */
+:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* ── Page-level max-width consistency ── */
+.page-container {
+  width: 100%;
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .page-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* ── Motion & Animation System ── */
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Premium button hover — restrained darken + modest shadow */
+.btn-gold {
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-gold:hover {
+  background-color: #c9a22f;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Ripple animation */
+@keyframes ripple {
+  to { transform: scale(4); opacity: 0; }
+}
+.ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  animation: ripple 0.55s linear;
+  pointer-events: none;
+}
+
+/* Smooth scroll globally */
+html {
+  scroll-behavior: smooth;
+}

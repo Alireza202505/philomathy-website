@@ -1,0 +1,40 @@
+{
+  "name": "Plan",
+  "type": "object",
+  "properties": {
+    "planName": {
+      "type": "string"
+    },
+    "sessionCount": {
+      "type": "number"
+    },
+    "discountPercent": {
+      "type": "number"
+    },
+    "validityDays": {
+      "type": "number"
+    },
+    "appliesToMode": {
+      "type": "string",
+      "enum": [
+        "online",
+        "in-person",
+        "both"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "bestFor": {
+      "type": "string"
+    },
+    "sortOrder": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "planName",
+    "sessionCount",
+    "discountPercent"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "name": "Coupon",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "discountType": {
+      "type": "string",
+      "enum": [
+        "percentage",
+        "fixed",
+        "free_registration",
+        "free_trial"
+      ]
+    },
+    "value": {
+      "type": "number"
+    },
+    "expirationDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "maxUses": {
+      "type": "number"
+    },
+    "uses": {
+      "type": "number",
+      "default": 0
+    },
+    "minPurchase": {
+      "type": "number",
+      "default": 0
+    },
+    "applicableCategories": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "code",
+    "discountType",
+    "value"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "name": "Subject",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "tier": {
+      "type": "string",
+      "enum": [
+        "Tier 1",
+        "Tier 2",
+        "Tier 3",
+        "Univ Prep"
+      ]
+    },
+    "pricePerHour": {
+      "type": "number"
+    },
+    "description": {
+      "type": "string"
+    },
+    "gradeLevel": {
+      "type": "string"
+    },
+    "sortOrder": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "name",
+    "category",
+    "tier",
+    "pricePerHour"
+  ]
+}
