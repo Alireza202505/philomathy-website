@@ -9,7 +9,7 @@ let cachedTutorCoords = null;
 async function geocodeAddress(address) {
   const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(address)}&format=json&limit=1`;
   const res = await fetch(url, {
-    headers: { 'User-Agent': 'PhilomathyLearningCenter/1.0 (info@philomathy.ca)' }
+    headers: { 'User-Agent': 'PhilomathyLearningCenter/1.0 (philomathy.info@gmail.com)' }
   });
   if (!res.ok) return null;
   const data = await res.json();
