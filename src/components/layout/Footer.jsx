@@ -109,11 +109,11 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:info@philomathy.ca"
+                  href="mailto:philomathy.info@gmail.com"
                   className="flex items-start gap-3 text-sm text-white/55 hover:text-[#D4AF37] transition-colors duration-200 group"
                 >
                   <Mail className="w-4 h-4 mt-0.5 text-[#D4AF37] shrink-0" aria-hidden="true" />
-                  info@philomathy.ca
+                  philomathy.info@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3 text-sm text-white/55">
