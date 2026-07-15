@@ -30,7 +30,7 @@ export default function PrivacyPolicy() {
     },
     {
       title: "7. Your Rights",
-      body: "You may request access to, correction of, or deletion of your personal information at any time. To exercise these rights, contact us at info@philomathy.ca."
+      body: "You may request access to, correction of, or deletion of your personal information at any time. To exercise these rights, contact us at philomathy.info@gmail.com."
     },
     {
       title: "8. Changes to This Policy",
@@ -38,7 +38,7 @@ export default function PrivacyPolicy() {
     },
     {
       title: "9. Contact Us",
-      body: "If you have questions about this Privacy Policy, please contact us at info@philomathy.ca or (778) 926-1382."
+      body: "If you have questions about this Privacy Policy, please contact us at philomathy.info@gmail.com or (778) 926-1382."
     },
   ];
 
