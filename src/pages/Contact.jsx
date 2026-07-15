@@ -10,7 +10,7 @@ import { base44 } from "@/api/base44Client";
 
 const contactInfo = [
 { icon: Phone, label: "Phone", value: "(778) 926-1382" },
-{ icon: Mail, label: "Email", value: "info@philomathy.ca" },
+{ icon: Mail, label: "Email", value: "philomathy.info@gmail.com" },
 { icon: MapPin, label: "Location", value: "Vancouver, BC, Canada" },
 { icon: Clock, label: "Hours", value: "Every Day\xA0 8AM - 10PM\xA0" }];
 
