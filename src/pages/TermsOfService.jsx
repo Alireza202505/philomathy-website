@@ -38,7 +38,7 @@ export default function TermsOfService() {
     },
     {
       title: "9. Contact",
-      body: "For questions regarding these Terms of Service, please contact us at info@philomathy.ca or (778) 926-1382."
+      body: "For questions regarding these Terms of Service, please contact us at philomathy.info@gmail.com or (778) 926-1382."
     },
   ];
 
