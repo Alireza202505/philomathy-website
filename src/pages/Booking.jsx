@@ -55,10 +55,29 @@ export default function Booking() {
     }
   }, [searchParams]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
-    toast.success("Request submitted! We'll confirm your booking shortly.");
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    await fetch('/api/notify-booking', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        subject: form.subject,
+        preferredDate: form.date,
+        message: `${form.message}\n\nTime: ${form.time}\nMode: ${form.mode}`,
+      }),
+    });
+  } catch (err) {
+    console.error('Failed to send booking notification email:', err);
+  }
+
+  setSubmitted(true);
+  toast.success("Request submitted! We'll confirm your booking shortly.");
+};
   };
 
   if (submitted) {
