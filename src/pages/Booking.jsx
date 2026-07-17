@@ -78,7 +78,6 @@ export default function Booking() {
   setSubmitted(true);
   toast.success("Request submitted! We'll confirm your booking shortly.");
 };
-  };
 
   if (submitted) {
     return (
