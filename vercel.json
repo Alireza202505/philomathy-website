@@ -1,6 +1,7 @@
 {
   "rewrites": [
     { "source": "/api/notify-booking", "destination": "/api/notify-booking" },
+    { "source": "/api/(.*)", "destination": "https://philomathy-math-masteryours.base44.app/api/$1" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ]
 }
