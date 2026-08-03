@@ -6,7 +6,6 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle2, Loader2 } from "lucide-react";
 import { toast } from "sonner";
-import { base44 } from "@/api/base44Client";
 
 const contactInfo = [
 { icon: Phone, label: "Phone", value: "(778) 926-1382" },
@@ -24,15 +23,21 @@ export default function Contact() {
     e.preventDefault();
     setSubmitting(true);
     try {
-      await base44.entities.ContactSubmission.create({
-        name: form.name,
-        email: form.email,
-        subject: form.subject,
-        message: form.message,
+      const response = await fetch('/api/notify-contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          subject: form.subject,
+          message: form.message,
+        }),
       });
+      if (!response.ok) throw new Error('Request failed');
       setSubmitted(true);
       toast.success("Message sent — we'll reply within one business day.");
-    } catch {
+    } catch (err) {
+      console.error('Failed to send contact message:', err);
       toast.error("Something went wrong. Please try again or email us directly.");
     } finally {
       setSubmitting(false);
