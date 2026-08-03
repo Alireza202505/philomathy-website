@@ -16,6 +16,7 @@ const quickLinks = [
   { label: "Pricing", path: "/pricing" },
   { label: "Calculator", path: "/calculator" },
   { label: "Book Assessment", path: "/booking" },
+  { label: "Become a Teacher", path: "/become-a-teacher" },
   { label: "Admin Dashboard", path: "/admin" },
 ];
 
