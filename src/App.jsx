@@ -1,145 +1,95 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin } from "lucide-react";
-import { motion } from "framer-motion";
-import AcademicBackground from "@/components/shared/AcademicBackground";
+import { Toaster } from "@/components/ui/toaster"
+import { QueryClientProvider } from '@tanstack/react-query'
+import { queryClientInstance } from '@/lib/query-client'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import PageNotFound from './lib/PageNotFound';
+import { AuthProvider, useAuth } from '@/lib/AuthContext';
+import UserNotRegisteredError from '@/components/UserNotRegisteredError';
+import ScrollToTop from './components/ScrollToTop';
 
-const LOGO_URL = "https://media.base44.com/images/public/user_69b81abd9f61734e7a6c0288/554ba424c_watermarked_img_12781243251778528366.jpg";
+import SiteLayout from '@/components/layout/SiteLayout';
+import Home from '@/pages/Home';
+import Programs from '@/pages/Programs';
+import Subjects from '@/pages/Subjects';
+import About from '@/pages/About';
+import Testimonials from '@/pages/Testimonials';
+import Booking from '@/pages/Booking';
+import Resources from '@/pages/Resources';
+import Pricing from '@/pages/Pricing';
+import Contact from '@/pages/Contact';
+import BecomeATeacher from '@/pages/BecomeATeacher';
+import Calculator from '@/pages/Calculator';
+import EuclidTool from '@/pages/EuclidTool';
+import PhilomathyTool from '@/pages/PhilomathyTool';
+import PeriodicTablePage from '@/pages/PeriodicTablePage';
+import FinancialCalculator from '@/pages/FinancialCalculator';
+import StatisticalCalculator from '@/pages/StatisticalCalculator';
+import GeoGebra3D from '@/pages/GeoGebra3D';
+import PrivacyPolicy from '@/pages/PrivacyPolicy';
+import TermsOfService from '@/pages/TermsOfService';
+import AdminDashboard from '@/pages/admin/AdminDashboard';
 
-const quickLinks = [
-  { label: "Home", path: "/" },
-  { label: "Programs", path: "/programs" },
-  { label: "Subjects", path: "/subjects" },
-  { label: "About", path: "/about" },
-  { label: "Testimonials", path: "/testimonials" },
-  { label: "Resources", path: "/resources" },
-  { label: "Pricing", path: "/pricing" },
-  { label: "Calculator", path: "/calculator" },
-  { label: "Book Assessment", path: "/booking" },
-  { label: "Become a Teacher", path: "/become-a-teacher" },
-  { label: "Admin Dashboard", path: "/admin" },
-];
+const AuthenticatedApp = () => {
+  const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
 
-const subjects = ["Mathematics", "Physics", "Chemistry", "French", "English", "University Prep"];
-
-export default function Footer() {
-  return (
-    <footer className="bg-[#071A2E] text-white/75 relative overflow-hidden" role="contentinfo">
-      <AcademicBackground variant="dark" density={9} />
-
-      <div className="relative max-w-7xl mx-auto px-5 sm:px-8 py-16 md:py-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
-
-          {/* Brand */}
-          <div className="sm:col-span-2 lg:col-span-1">
-            <div className="flex items-center gap-3 mb-5">
-              <motion.img
-                src={LOGO_URL}
-                alt="Philomathy Learning Center"
-                className="h-10 w-10 rounded-lg object-cover"
-                animate={{
-                  boxShadow: [
-                    "0 0 0px rgba(212,175,55,0)",
-                    "0 0 16px rgba(212,175,55,0.35)",
-                    "0 0 0px rgba(212,175,55,0)",
-                  ],
-                }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              />
-              <div className="leading-none">
-                <span className="font-heading text-lg font-bold text-white block">Philomathy</span>
-                <span className="text-[0.6rem] text-[#D4AF37] tracking-[0.22em] uppercase font-body font-semibold block mt-0.5">
-                  Learning Center
-                </span>
-              </div>
-            </div>
-            <p className="text-sm leading-relaxed text-white/50 max-w-xs">
-              Excellence in Mathematics Education. Results for a Lifetime.
-            </p>
-            <p className="text-xs text-white/35 mt-4 font-body">
-              Led by Alireza Khatoonabadi, PhD
-            </p>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-heading text-white font-semibold text-sm mb-5 uppercase tracking-wider">Quick Links</h4>
-            <ul className="space-y-2.5">
-              {quickLinks.map((link) => (
-                <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className="text-sm text-white/55 hover:text-[#D4AF37] transition-colors duration-200"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Subjects */}
-          <div>
-            <h4 className="font-heading text-white font-semibold text-sm mb-5 uppercase tracking-wider">Subjects</h4>
-            <ul className="space-y-2.5">
-              {subjects.map((s) => (
-                <li key={s}>
-                  <Link
-                    to="/subjects"
-                    className="text-sm text-white/55 hover:text-[#D4AF37] transition-colors duration-200"
-                  >
-                    {s}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="font-heading text-white font-semibold text-sm mb-5 uppercase tracking-wider">Contact</h4>
-            <ul className="space-y-4">
-              <li>
-                <a
-                  href="tel:+17789261382"
-                  className="flex items-start gap-3 text-sm text-white/55 hover:text-[#D4AF37] transition-colors duration-200 group"
-                >
-                  <Phone className="w-4 h-4 mt-0.5 text-[#D4AF37] shrink-0" aria-hidden="true" />
-                  (778) 926-1382
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:philomathy.info@gmail.com"
-                  className="flex items-start gap-3 text-sm text-white/55 hover:text-[#D4AF37] transition-colors duration-200 group"
-                >
-                  <Mail className="w-4 h-4 mt-0.5 text-[#D4AF37] shrink-0" aria-hidden="true" />
-                  philomathy.info@gmail.com
-                </a>
-              </li>
-              <li className="flex items-start gap-3 text-sm text-white/55">
-                <MapPin className="w-4 h-4 mt-0.5 text-[#D4AF37] shrink-0" aria-hidden="true" />
-                Vancouver, BC, Canada
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Bottom bar */}
-        <div className="border-t border-white/8 mt-14 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-white/35 font-body">
-            © {new Date().getFullYear()} Philomathy Learning Center. All rights reserved.
-          </p>
-          <div className="flex gap-6">
-            <Link to="/privacy-policy" className="text-xs text-white/35 hover:text-[#D4AF37] transition-colors duration-200">
-              Privacy Policy
-            </Link>
-            <Link to="/terms-of-service" className="text-xs text-white/35 hover:text-[#D4AF37] transition-colors duration-200">
-              Terms of Service
-            </Link>
-          </div>
-        </div>
+  if (isLoadingPublicSettings || isLoadingAuth) {
+    return (
+      <div className="fixed inset-0 flex items-center justify-center bg-[#071A2E]">
+        <div className="w-8 h-8 border-4 border-[#D4AF37]/30 border-t-[#D4AF37] rounded-full animate-spin"></div>
       </div>
-    </footer>
+    );
+  }
+
+  if (authError) {
+    if (authError.type === 'user_not_registered') {
+      return <UserNotRegisteredError />;
+    } else if (authError.type === 'auth_required') {
+      navigateToLogin();
+      return null;
+    }
+  }
+
+  return (
+    <Routes>
+      <Route element={<SiteLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/programs" element={<Programs />} />
+        <Route path="/subjects" element={<Subjects />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/testimonials" element={<Testimonials />} />
+        <Route path="/booking" element={<Booking />} />
+        <Route path="/resources" element={<Resources />} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/become-a-teacher" element={<BecomeATeacher />} />
+        <Route path="/calculator" element={<Calculator />} />
+        <Route path="/calculator/euclid" element={<EuclidTool />} />
+        <Route path="/calculator/philomathy" element={<PhilomathyTool />} />
+        <Route path="/calculator/periodic-table" element={<PeriodicTablePage />} />
+        <Route path="/calculator/financial" element={<FinancialCalculator />} />
+        <Route path="/calculator/statistical" element={<StatisticalCalculator />} />
+        <Route path="/calculator/3d" element={<GeoGebra3D />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/admin" element={<AdminDashboard />} />
+      </Route>
+      <Route path="*" element={<PageNotFound />} />
+    </Routes>
   );
+};
+
+function App() {
+  return (
+    <AuthProvider>
+      <QueryClientProvider client={queryClientInstance}>
+        <Router>
+          <ScrollToTop />
+          <AuthenticatedApp />
+        </Router>
+        <Toaster />
+      </QueryClientProvider>
+    </AuthProvider>
+  )
 }
+
+export default App
