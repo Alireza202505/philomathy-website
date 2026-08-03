@@ -1,11 +1,33 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { Award, Clock, BookOpen, GraduationCap, Users, Quote } from "lucide-react";
+import { Award, Clock, BookOpen, GraduationCap, Users, Quote, User } from "lucide-react";
 import AcademicBackground from "@/components/shared/AcademicBackground";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 const FOUNDER_URL = "https://media.base44.com/images/public/6a331feb505e847f52c30cf2/b2e7715e9_finalpicture.jpg";
+
+const teamMembers = [
+  {
+    name: "Dr. Massoud Amini",
+    title: "PhD in Mathematics (University of Illinois) · Instructor",
+    photoUrl: null, // TODO: replace with photo URL once available
+    bio: [
+      "Dr. Massoud Amini is a mathematician, university professor, and researcher with more than 25 years of experience in teaching, research, and academic mentoring. He has authored over 140 peer-reviewed publications in leading mathematics journals, which have received more than 1,450 citations. He earned his PhD in Mathematics from the University of Illinois and has taught a broad range of undergraduate and graduate mathematics courses, helping students develop rigorous mathematical foundations and succeed in demanding academic programs.",
+      "Dr. Amini is currently a Visiting Professor at Carleton University and an Adjunct Professor at the University of Ottawa. Throughout his academic career, he has taught at several leading institutions, including the University of Alberta, the University of Saskatchewan, the University of Calgary, and the University of Illinois, gaining extensive experience in undergraduate instruction, graduate teaching, and research supervision.",
+      "His teaching philosophy combines conceptual understanding, mathematical rigor, intuitive visualization, and structured problem-solving to help students master challenging concepts with confidence. He also provides specialized preparation for graduate qualifying examinations and advanced university mathematics courses.",
+      "Beyond coursework, Dr. Amini mentors undergraduate and graduate students in thesis development, research methodology, mathematical proof writing, mathematical and statistical modelling, data analysis, publication-quality research, and journal manuscript preparation. Whether you are preparing for a challenging university course, pursuing graduate studies, or conducting mathematical or interdisciplinary research, he provides personalized guidance tailored to help you achieve academic excellence.",
+    ],
+    expertise: [
+      "Real Analysis", "Complex Analysis", "Functional Analysis", "Operator Theory",
+      "Measure Theory", "Topological Groups", "Lie Groups", "Harmonic Analysis",
+      "General Topology", "Differential Geometry", "Abstract Algebra", "Advanced Calculus",
+      "ODEs", "PDEs", "Stochastic Differential Equations", "Optimization",
+      "Mathematical Modeling", "Probability Theory", "Mathematical Statistics",
+      "Machine Learning Mathematics", "Scientific Computing",
+    ],
+  },
+];
 
 const timelineItems = [
   { year: "Early Career", label: "Academic Journey", desc: "A lifelong passion for mathematics beginning with competitive problem solving and academic distinction." },
@@ -155,6 +177,83 @@ export default function About() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* ── Meet Our Team ── */}
+      <div className="max-w-6xl mx-auto px-5 sm:px-8 py-20 md:py-24 border-t border-border">
+        <div className="text-center mb-14">
+          <p className="text-[0.7rem] uppercase tracking-[0.3em] text-[#D4AF37] font-body font-semibold mb-4">
+            Our Instructors
+          </p>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">
+            Meet Our Team
+          </h2>
+        </div>
+
+        <div className="space-y-10">
+          {teamMembers.map((member, i) => (
+            <motion.div
+              key={member.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+              className="bg-card border border-border rounded-2xl p-7 sm:p-9"
+            >
+              <div className="grid md:grid-cols-[auto_1fr] gap-7 md:gap-9">
+                {/* Photo / placeholder */}
+                <div className="flex md:flex-col items-center md:items-start gap-4">
+                  <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-[#D4AF37]/10 border border-[#D4AF37]/25 flex items-center justify-center overflow-hidden shrink-0">
+                    {member.photoUrl ? (
+                      <img
+                        src={member.photoUrl}
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <User className="w-10 h-10 text-[#D4AF37]/50" aria-hidden="true" />
+                    )}
+                  </div>
+                  <div className="md:hidden">
+                    <h3 className="font-heading text-xl font-bold text-foreground">{member.name}</h3>
+                    <p className="text-[#D4AF37] font-body text-sm font-medium mt-0.5">{member.title}</p>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="hidden md:block mb-5">
+                    <h3 className="font-heading text-2xl font-bold text-foreground">{member.name}</h3>
+                    <p className="text-[#D4AF37] font-body text-sm font-medium mt-1">{member.title}</p>
+                  </div>
+
+                  <div className="space-y-4 text-foreground/75 font-body leading-[1.8] text-[0.98rem]">
+                    {member.bio.map((paragraph, idx) => (
+                      <p key={idx}>{paragraph}</p>
+                    ))}
+                  </div>
+
+                  {member.expertise && member.expertise.length > 0 && (
+                    <div className="mt-6">
+                      <h4 className="font-heading text-sm font-bold text-foreground mb-3">
+                        Areas of Expertise
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {member.expertise.map((topic) => (
+                          <span
+                            key={topic}
+                            className="text-xs font-body font-medium text-muted-foreground bg-muted border border-border rounded-full px-3 py-1.5"
+                          >
+                            {topic}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
 
