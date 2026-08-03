@@ -130,14 +130,36 @@ export default function About() {
         <div className="grid lg:grid-cols-3 gap-10">
           <div className="lg:col-span-2 space-y-5 text-foreground/75 font-body leading-[1.85] text-[1.05rem]">
             <p>
-              Alireza Khatoonabadi holds a PhD in Mathematics and has over 25 years of teaching experience across K–12 and university levels. His expertise spans Pre-calculus, Calculus AP (AB/BC), Linear Algebra, Differential Equations, Discrete Mathematics, Probability & Statistics, and Geometry.
+              Alireza Khatoonabadi holds a PhD in Mathematics and has over 25 years of experience in teaching, mentoring, and academic instruction spanning K–12 through university levels. He is the founder and lead instructor of Philomathy Learning Center, where he has built a teaching practice around rigor, clarity, and genuine mathematical understanding rather than rote memorization.
+            </p>
+            <p>
+              Beyond the classroom, Alireza's academic background includes university-level teaching roles and contributions to peer-reviewed mathematical research. This blend of research-level depth and decades of hands-on instruction allows him to move fluidly between foundational concepts and advanced material, meeting each student exactly where they are.
             </p>
             <p>
               His teaching philosophy is rooted in a deep conviction: mathematics is not about memorizing formulas — it is about learning how to think. He presents concepts clearly and concisely, breaking them into smaller understandable parts, using visual aids like diagrams and graphs, and gradually increasing difficulty with targeted practice.
             </p>
             <p>
-              Alireza recognizes that each student has unique strengths and weaknesses. He tailors instruction to individual needs, identifies where students struggle, encourages critical thinking, and provides timely feedback on assignments — creating an environment where questions are celebrated and curiosity is rewarded.
+              Alireza recognizes that each student has unique strengths and weaknesses. He tailors instruction to individual needs, identifies where students struggle, encourages critical thinking, and provides timely, constructive feedback — creating an environment where questions are celebrated and curiosity is rewarded. Beyond regular coursework, he also supports students preparing for competitive exams, university-level assessments, and advanced independent study.
             </p>
+
+            {/* Areas of Expertise */}
+            <div className="mt-2">
+              <h3 className="font-heading text-lg font-bold text-foreground mb-3">Areas of Expertise</h3>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Pre-calculus", "Calculus AP (AB/BC)", "Linear Algebra", "Differential Equations",
+                  "Discrete Mathematics", "Probability & Statistics", "Geometry",
+                  "Mathematics for Machine Learning",
+                ].map((topic) => (
+                  <span
+                    key={topic}
+                    className="text-xs font-body font-medium text-muted-foreground bg-muted border border-border rounded-full px-3 py-1.5"
+                  >
+                    {topic}
+                  </span>
+                ))}
+              </div>
+            </div>
 
             {/* Philomathy Principles */}
             <div className="mt-6 p-6 bg-card border border-border rounded-2xl">
