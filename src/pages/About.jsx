@@ -4,6 +4,7 @@ import { Award, Clock, BookOpen, GraduationCap, Users, Quote, User } from "lucid
 import AcademicBackground from "@/components/shared/AcademicBackground";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import massoudAminiPhoto from "@/assets/team/massoud-amini.jpg";
 
 const FOUNDER_URL = "https://media.base44.com/images/public/6a331feb505e847f52c30cf2/b2e7715e9_finalpicture.jpg";
 
