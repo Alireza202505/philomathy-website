@@ -227,7 +227,7 @@ export default function About() {
               <div className="grid md:grid-cols-[auto_1fr] gap-7 md:gap-9">
                 {/* Photo / placeholder */}
                 <div className="flex md:flex-col items-center md:items-start gap-4">
-                  <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-[#D4AF37]/10 border border-[#D4AF37]/25 flex items-center justify-center overflow-hidden shrink-0">
+                  <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-2xl bg-[#D4AF37]/10 border border-[#D4AF37]/25 flex items-center justify-center overflow-hidden shrink-0">
                     {member.photoUrl ? (
                       <img
                         src={member.photoUrl}
