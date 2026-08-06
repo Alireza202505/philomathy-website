@@ -12,7 +12,7 @@ const teamMembers = [
   {
     name: "Dr. Massoud Amini",
     title: "PhD in Mathematics (University of Illinois) · Instructor",
-    photoUrl: null, // TODO: replace with photo URL once available
+    photoUrl: massoudAminiPhoto, // TODO: replace with photo URL once available
     bio: [
       "Dr. Massoud Amini is a mathematician, university professor, and researcher with more than 25 years of experience in teaching, research, and academic mentoring. He has authored over 140 peer-reviewed publications in leading mathematics journals, which have received more than 1,450 citations. He earned his PhD in Mathematics from the University of Illinois and has taught a broad range of undergraduate and graduate mathematics courses, helping students develop rigorous mathematical foundations and succeed in demanding academic programs.",
       "Dr. Amini is currently a Visiting Professor at Carleton University and an Adjunct Professor at the University of Ottawa. Throughout his academic career, he has taught at several leading institutions, including the University of Alberta, the University of Saskatchewan, the University of Calgary, and the University of Illinois, gaining extensive experience in undergraduate instruction, graduate teaching, and research supervision.",
