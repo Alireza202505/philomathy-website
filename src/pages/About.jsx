@@ -5,6 +5,7 @@ import AcademicBackground from "@/components/shared/AcademicBackground";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import massoudAminiPhoto from "@/assets/team/massoud-amini.jpg";
+import pouriaMortezaaghaPhoto from "@/assets/team/pouria-mortezaagha.jpg";
 
 const FOUNDER_URL = "https://media.base44.com/images/public/6a331feb505e847f52c30cf2/b2e7715e9_finalpicture.jpg";
 
@@ -26,6 +27,29 @@ const teamMembers = [
       "ODEs", "PDEs", "Stochastic Differential Equations", "Optimization",
       "Mathematical Modeling", "Probability Theory", "Mathematical Statistics",
       "Machine Learning Mathematics", "Scientific Computing",
+    ],
+  },
+  {
+    name: "Pouria Mortezaagha",
+    title: "M.Sc. Systems Science & Engineering (University of Ottawa) · PhD Candidate · AI/ML & Data Science Instructor",
+    photoUrl: pouriaMortezaaghaPhoto,
+    bio: [
+      "Pouria Mortezaagha builds AI systems and publishes research on them. He has written more than 17 peer-reviewed papers and preprints on explainable AI, natural language processing, and retrieval-augmented generation, cited over 90 times. Most of those citations come from one first-author paper in Scientific Reports on diagnosing early Parkinson's disease through voice analysis. He holds an M.Sc. in Systems Science and Engineering from the University of Ottawa with a cybersecurity microprogram, is a PhD candidate there in Digital Transformation and Innovation, and did his undergraduate degree in Electrical Engineering (Control Systems) at Iran University of Science and Technology.",
+      "At Bell Canada he works as an AI Engineer on distributed agent architectures inside Gemini Enterprise, connecting agents over A2A protocols to MCP services running on Cloud Run. He also built a real-time voice-to-voice LLM customer simulator on Pipecat and FastAPI, and moved a production translation system onto pgVector with HNSW indexing to cut its retrieval latency.",
+      "At the Ottawa Hospital Research Institute he built RAG and GraphRAG systems on AWS and Azure using Neo4j and vector databases, plus LiveDB, a continuous ETL pipeline that pulls open-access biomedical papers into a searchable knowledge base. A full-text question-answering pipeline he wrote raised systematic review throughput by 80%. He has also done secure cloud engineering at the Canadian Institute for Health Information and built data collection pipelines at the City of Ottawa. He publishes his tooling as open source, including claude-mesh, a messaging layer between Claude Code instances.",
+      "He taught data science as a teaching assistant at the University of Ottawa, working with graduate students on ML and NLP system design and reproducible pipelines. He covers machine learning and deep learning, Python, data science workflows, LLM and RAG system design, cloud deployment, and the mathematics underneath all of it: linear algebra, probability, optimization. His emphasis falls on what happens after the derivation: a student should be able to say why an algorithm works and what it does to messy data on real hardware.",
+    ],
+    expertise: [
+      "Machine Learning", "Deep Learning", "Large Language Models",
+      "Retrieval-Augmented Generation (RAG)", "GraphRAG", "LLM Fine-Tuning (RLHF, LoRA, SFT)",
+      "Explainable AI", "Natural Language Processing", "PyTorch & Transformers",
+      "AI Agents (Google ADK, A2A, MCP)", "LangChain & LangGraph",
+      "Python Programming", "Data Science", "Data Engineering (Prefect, Apache Iceberg)",
+      "PostgreSQL & Vector Databases (pgVector, FAISS)", "Neo4j & Knowledge Graphs",
+      "Cloud Architecture (AWS, GCP, Azure)", "Docker & Kubernetes",
+      "CI/CD & Infrastructure as Code", "REST APIs & Microservices (FastAPI)",
+      "Web Automation (Playwright, Selenium)", "Cybersecurity & Secure API Design",
+      "Data Visualization (Power BI, Plotly)",
     ],
   },
 ];
