@@ -24,7 +24,7 @@ const navLinksAfter = [
 { label: "Contact", path: "/contact" }];
 
 
-export default function Navbar() {
+export default function Navbar({ bannerOpen = false }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [calcDropdownOpen, setCalcDropdownOpen] = useState(false);
@@ -44,7 +44,8 @@ export default function Navbar() {
     <nav
       role="navigation"
       aria-label="Main navigation"
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
+      bannerOpen ? "top-12" : "top-0"} ${
       scrolled ?
       "bg-[#071A2E]/96 backdrop-blur-xl shadow-xl shadow-black/25 py-3" :
       "bg-transparent py-5"}`
