@@ -7,8 +7,8 @@ import { motion, AnimatePresence } from "framer-motion";
 const LOGO_URL = "https://media.base44.com/images/public/user_69b81abd9f61734e7a6c0288/554ba424c_watermarked_img_12781243251778528366.jpg";
 
 const CALCULATOR_TOOLS = [
+  { label: "Philomathy", path: "https://app.philomathy.ca", external: true, icon: LineChart, desc: "Open the Philomathy app." },
   { label: "Euclid", path: "/calculator/euclid", icon: PenTool, desc: "Solve math & physics problems by drawing." },
-  { label: "Philomathy", path: "/calculator/philomathy", icon: LineChart, desc: "Graph functions and explore math visually." },
   { label: "Periodic Table", path: "/calculator/periodic-table", icon: Atom, desc: "Interactive table of elements with full details." },
   { label: "Financial Calculator", path: "/calculator/financial", icon: DollarSign, desc: "TVM, loans, compound interest, NPV/IRR." },
   { label: "Statistical Calculator", path: "/calculator/statistical", icon: BarChart3, desc: "1-var stats, regression, and distributions." },
@@ -123,10 +123,14 @@ export default function Navbar({ bannerOpen = false }) {
                   <div className="p-3">
                     {CALCULATOR_TOOLS.map((tool) => {
                       const Icon = tool.icon;
+                      const Item = tool.external ? "a" : Link;
+                      const itemProps = tool.external
+                        ? { href: tool.path, target: "_blank", rel: "noopener noreferrer" }
+                        : { to: tool.path };
                       return (
-                        <Link
+                        <Item
                           key={tool.path}
-                          to={tool.path}
+                          {...itemProps}
                           className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors duration-200 group/item"
                         >
                           <div className="w-10 h-10 rounded-xl bg-[#D4AF37]/10 flex items-center justify-center shrink-0 group-hover/item:bg-[#D4AF37]/20 transition-colors">
@@ -140,7 +144,7 @@ export default function Navbar({ bannerOpen = false }) {
                               {tool.desc}
                             </p>
                           </div>
-                        </Link>
+                        </Item>
                       );
                     })}
                   </div>
@@ -201,10 +205,14 @@ export default function Navbar({ bannerOpen = false }) {
               </p>
               {CALCULATOR_TOOLS.map((tool) => {
                 const Icon = tool.icon;
+                const Item = tool.external ? "a" : Link;
+                const itemProps = tool.external
+                  ? { href: tool.path, target: "_blank", rel: "noopener noreferrer" }
+                  : { to: tool.path };
                 return (
-                  <Link
+                  <Item
                     key={tool.path}
-                    to={tool.path}
+                    {...itemProps}
                     className={`flex items-center gap-3 py-2.5 px-3 rounded-lg text-[0.95rem] font-body font-medium transition-all duration-200 ${
                     location.pathname === tool.path ?
                     "text-[#D4AF37] bg-[#D4AF37]/8" :
@@ -212,7 +220,7 @@ export default function Navbar({ bannerOpen = false }) {
                     }>
                     <Icon className="w-4 h-4 shrink-0" />
                     {tool.label}
-                  </Link>
+                  </Item>
                 );
               })}
 
