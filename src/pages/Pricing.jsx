@@ -190,7 +190,7 @@ export default function Pricing() {
 
       <div className="max-w-4xl mx-auto px-5 sm:px-8 py-16 md:py-24">
         {/* Free Assessment callout */}
-        <div className="bg-[#D4AF37]/8 border border-[#D4AF37]/25 rounded-2xl px-6 py-5 mb-14 flex items-center justify-between gap-4 flex-wrap">
+        <div className="bg-[#D4AF37]/10 border border-[#D4AF37]/25 rounded-2xl px-6 py-5 mb-14 flex items-center justify-between gap-4 flex-wrap">
           <div>
             <h3 className="font-heading text-lg font-bold text-foreground">Free Assessment — $0</h3>
             <p className="text-sm text-muted-foreground font-body mt-0.5">Every journey starts here. No plan required, no commitment.</p>

@@ -14,7 +14,7 @@ const TABS = [
 
 function ResultRow({ label, value, highlight }) {
   return (
-    <div className={`flex items-center justify-between py-2.5 px-4 ${highlight ? "bg-[#D4AF37]/8" : ""}`}>
+    <div className={`flex items-center justify-between py-2.5 px-4 ${highlight ? "bg-[#D4AF37]/10" : ""}`}>
       <span className="font-body text-sm text-muted-foreground" dangerouslySetInnerHTML={{ __html: label }} />
       <span className={`font-mono font-bold text-sm ${highlight ? "text-[#D4AF37]" : "text-foreground"}`}>{value}</span>
     </div>

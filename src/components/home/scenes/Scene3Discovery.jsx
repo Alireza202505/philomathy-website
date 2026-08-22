@@ -58,7 +58,7 @@ function DiscoveryCard({ visual: v, index: i }) {
           <DrawingCanvas type={v.type} color={v.color} width={320} height={110} />
         )}
       </div>
-      <div className="pt-3 border-t border-white/6">
+      <div className="pt-3 border-t border-white/5">
         <div className="flex items-center justify-between mb-1">
           <h3 className="font-heading text-base font-bold text-white">{v.label}</h3>
           <code
@@ -71,7 +71,7 @@ function DiscoveryCard({ visual: v, index: i }) {
             {v.formula}
           </code>
         </div>
-        <p className="font-body text-xs text-white/38 mt-1">{v.desc}</p>
+        <p className="font-body text-xs text-white/40 mt-1">{v.desc}</p>
       </div>
     </motion.div>
   );

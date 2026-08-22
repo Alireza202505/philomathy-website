@@ -125,7 +125,7 @@ export default function Scene6SubjectsUniverse() {
           <Link to="/subjects">
             <Button
               variant="outline"
-              className="border-[#D4AF37]/28 text-[#D4AF37] hover:bg-[#D4AF37]/8 hover:border-[#D4AF37]/55 font-body font-semibold rounded-full px-8 h-11 transition-all duration-300 group"
+              className="border-[#D4AF37]/30 text-[#D4AF37] hover:bg-[#D4AF37]/10 hover:border-[#D4AF37]/55 font-body font-semibold rounded-full px-8 h-11 transition-all duration-300 group"
             >
               View All Programs
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />

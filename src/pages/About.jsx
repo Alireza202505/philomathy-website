@@ -138,7 +138,7 @@ export default function About() {
             >
               <div
                 aria-hidden="true"
-                className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-[#D4AF37]/12 via-transparent to-[#0B4F57]/12 blur-2xl"
+                className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-[#D4AF37]/10 via-transparent to-[#0B4F57]/10 blur-2xl"
               />
               <img
                 src={FOUNDER_URL}

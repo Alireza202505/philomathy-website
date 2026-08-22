@@ -196,7 +196,7 @@ export default function Navbar({ bannerOpen = false }) {
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.28, ease: "easeInOut" }}
-          className="lg:hidden overflow-hidden bg-[#071A2E] border-t border-white/8">
+          className="lg:hidden overflow-hidden bg-[#071A2E] border-t border-white/10">
           
             <nav aria-label="Mobile navigation" className="px-5 py-6 space-y-1">
               {/* Calculator section */}
@@ -215,7 +215,7 @@ export default function Navbar({ bannerOpen = false }) {
                     {...itemProps}
                     className={`flex items-center gap-3 py-2.5 px-3 rounded-lg text-[0.95rem] font-body font-medium transition-all duration-200 ${
                     location.pathname === tool.path ?
-                    "text-[#D4AF37] bg-[#D4AF37]/8" :
+                    "text-[#D4AF37] bg-[#D4AF37]/10" :
                     "text-white/80 hover:text-white hover:bg-white/5"}`
                     }>
                     <Icon className="w-4 h-4 shrink-0" />
@@ -224,7 +224,7 @@ export default function Navbar({ bannerOpen = false }) {
                 );
               })}
 
-              <div className="border-t border-white/8 my-3" />
+              <div className="border-t border-white/10 my-3" />
 
               {[...navLinksBefore, ...navLinksAfter].map((link) =>
             <Link
@@ -232,7 +232,7 @@ export default function Navbar({ bannerOpen = false }) {
               to={link.path}
               className={`flex items-center py-2.5 px-3 rounded-lg text-[0.95rem] font-body font-medium transition-all duration-200 ${
               location.pathname === link.path ?
-              "text-[#D4AF37] bg-[#D4AF37]/8" :
+              "text-[#D4AF37] bg-[#D4AF37]/10" :
               "text-white/80 hover:text-white hover:bg-white/5"}`
               }>
 

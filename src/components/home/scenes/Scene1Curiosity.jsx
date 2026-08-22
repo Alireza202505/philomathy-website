@@ -20,7 +20,7 @@ export default function Scene1Curiosity() {
         />
       </div>
       {/* Dark gradient overlay for legibility — semi-transparent so watermark shows through */}
-      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-b from-[#040E1A]/92 via-[#040E1A]/80 to-[#061327]/95" />
+      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-b from-[#040E1A]/90 via-[#040E1A]/80 to-[#061327]/95" />
 
       <div className="relative max-w-6xl mx-auto px-5 sm:px-8 py-32 w-full">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
