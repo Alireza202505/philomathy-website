@@ -47,7 +47,7 @@ export default function Navbar({ bannerOpen = false }) {
       className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
       bannerOpen ? "top-12" : "top-0"} ${
       scrolled ?
-      "bg-[#071A2E]/96 backdrop-blur-xl shadow-xl shadow-black/25 py-3" :
+      "bg-[#071A2E]/95 backdrop-blur-xl shadow-xl shadow-black/25 py-3" :
       "bg-transparent py-5"}`
       }>
       
@@ -118,7 +118,7 @@ export default function Navbar({ bannerOpen = false }) {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 8 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="absolute top-full right-0 mt-2 w-[400px] max-h-[90vh] overflow-y-auto bg-[#071A2E]/98 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl shadow-black/50"
+                  className="absolute top-full right-0 mt-2 w-[400px] max-h-[90vh] overflow-y-auto bg-[#071A2E] backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl shadow-black/50"
                 >
                   <div className="p-3">
                     {CALCULATOR_TOOLS.map((tool) => {
