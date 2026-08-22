@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Box, ExternalLink } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import AcademicBackground from "@/components/shared/AcademicBackground";
 
 export default function GeoGebra3D() {
